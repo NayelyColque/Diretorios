@@ -1,0 +1,16 @@
+<h1>Lista Tarefas</h1>
+<button (click)="alternarFiltro()">
+  {{ mostrarConcluidas ? 'Mostrar todas as tarefas' : 'Mostrar apenas concluídas' }}
+</button>
+
+@for (tarefa of disciplinas; track tarefa.id) {
+  @if (!mostrarConcluidas || tarefa.concluida) {
+    @switch(tarefa.nome) {
+      @case('Estudar') {<p>📘 Estudar</p>}
+      @case('Corrigir') {<p>📝 Corrigir</p>}
+      @case('Comprar') {<p>🛍️ Comprar</p>}
+      @case('Levar') {<p>🚗 Levar</p>}
+      @default {<p>❓ Outra tarefa</p>}
+    }
+  }
+}
