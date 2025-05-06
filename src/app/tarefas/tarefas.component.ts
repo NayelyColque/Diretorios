@@ -21,4 +21,8 @@ export class TarefasComponent {
   alternarFiltro() {
     this.mostrarConcluidas = !this.mostrarConcluidas;
   }
+
+  removerDisciplina(index: number) {
+    this.disciplinas.splice(index, 1);
+  }
 }

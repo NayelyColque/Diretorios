@@ -5,12 +5,17 @@
 
 @for (tarefa of disciplinas; track tarefa.id) {
   @if (!mostrarConcluidas || tarefa.concluida) {
+    <div class="tarefa-linha">
+      <div class="nome-tarefa">
     @switch(tarefa.nome) {
-      @case('Estudar') {<p>📘 Estudar</p>}
+      @case('Estudar') {<p>📘 Estudar</p>} 
       @case('Corrigir') {<p>📝 Corrigir</p>}
-      @case('Comprar') {<p>🛍️ Comprar</p>}
+      @case('Comprar') {<p>🛍️ Comprar</p>} 
       @case('Levar') {<p>🚗 Levar</p>}
       @default {<p>❓ Outra tarefa</p>}
     }
+      </div>  
+        <button (click)="removerDisciplina($index)">Remover</button>
+    </div>
   }
 }
